@@ -1,0 +1,13 @@
+button {
+    border-radius: 5px;
+    color: aliceblue;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(24, 145, 9)
+}
+input {
+    border-radius: 5px;
+    width: 250px;
+    height: 29px;
+    background-color: rgb(187, 204, 197)
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input>
+ <script>
+
+    let data = [];
+let seri = 0;
+document.getElementById('numberProducts').innerHTML = data.length + ' products';
+function addProduct() {
+   let input = document.getElementById('newProduct');
+   data[seri] = input.value;
+   seri++;
+   display();
+}
+function editProduct(seriEdit) {
+   data[seriEdit] = prompt('Nhập tên mới cho sản phẩm');
+   display();
+}
+function deleteProduct(seriDelete) {
+   data.splice(seriDelete,1);
+   display();
+}
+function display(){
+   let productList = document.getElementById('productList');
+   productList.innerHTML ='';
+   for(let i in data) {
+       productList.innerHTML += '<tr><td>'+data[i]+'</td><td><button onclick="editProduct('+i+')">Edit</button></td><td><button onclick="deleteProduct('+i+')">Delete</button></td>';
+   }
+   document.getElementById('numberProducts').innerHTML = data.length + ' products';
+}
+    </script>
+</body>
+</html>
